@@ -6,7 +6,6 @@
         <groupId>com.rickie.midend</groupId>
         <artifactId>smallerordercenter</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.demo</groupId>
     <artifactId>eurekaclient</artifactId>
