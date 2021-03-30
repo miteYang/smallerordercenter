@@ -1,0 +1,59 @@
+###被注册服务的端口号
+server:
+  port: 8011
+
+###服务别名，即注册到注册中心的一个名称
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/mite_tb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+###eureka 基本信息配置
+eureka:
+  client:
+    serviceUrl:
+      ###当前服务注册到eureka服务
+      defaultZone: http://localhost:8761/eureka
+    ###需要将自身的服务注册到eureka上面去
+    register-with-eureka: true
+    ###需要检索服务
+    fetch-registry: true
+##swagger配置
+#swagger:
+#  enabled: true
+#  title: user-service模块APIS
+#  description: 用户模块接口文档说明
+#  version: 1.0
+#  basePackage: com.demo.user.controller
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      table-prefix: 'tb_'
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映h射这个字段
+    call-setters-on-nulls: true
+    #    分步查询时懒加载
+    lazy-loading-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#feign的配置，连接超时及读取超时配置
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic

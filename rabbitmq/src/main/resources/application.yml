@@ -1,0 +1,31 @@
+###被注册服务的端口号
+server:
+  port: 8012
+###服务别名，即注册到注册中心的一个名称
+spring:
+  application:
+    name: mq-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/mite_tb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+###eureka 基本信息配置
+eureka:
+  client:
+    serviceUrl:
+      ###当前服务注册到eureka服务
+      defaultZone: http://localhost:8761/eureka
+    ###需要将自身的服务注册到eureka上面去
+    register-with-eureka: true
+    ###需要检索服务
+    fetch-registry: true
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
