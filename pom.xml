@@ -14,6 +14,10 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>user</module>
+        <module>eureka</module>
+        <module>eurekaclient</module>
+        <module>getway</module>
+        <module>rabbitmq</module>
     </modules>
     <name>smallerordercenter</name>
     <description>Demo project for Spring Boot</description>
