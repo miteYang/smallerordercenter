@@ -51,6 +51,15 @@
 			<version>1.7.0.RELEASE</version>
 		</dependency>
 	</dependencies>
+	<dependencyManagement>
+
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
