@@ -88,27 +88,8 @@
         </dependencies>
 
     </dependencyManagement>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>alimaven spring plugin</id>
-            <name>alimaven spring plugin</name>
-            <url>https://maven.aliyun.com/repository/spring-plugin</url>
-        </pluginRepository>
-    </pluginRepositories>
-    <repositories><!--阿里云搭建了一个国内镜像http://maven.aliyun.com，跑起来速度很快，可以进行配置-->
-        <repository>
-            <id>nexus-aliyun</id>
-            <name>nexus-aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <build>
+
+<!--    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -119,6 +100,6 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>
