@@ -7,7 +7,7 @@ import com.demo.user.entity.dto.TbProDto;
 import com.demo.user.feign.MqFeignClient;
 import com.demo.user.impl.PeoImpl;
 import com.demo.user.mapper.ProMapper;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
